@@ -1,12 +1,11 @@
 import { Home, Pizza, UtensilsCrossed } from 'lucide-react'
 
-import { NavLink } from './nav-link'
-import { Separator } from './ui/separator'
+import { EROUTES_PATHS } from '@/routes'
 
-enum ELINKS_TO_NAVIGATE {
-  HOME = '/',
-  ORDERS = '/orders',
-}
+import { AccountMenu } from './account-menu'
+import { NavLink } from './nav-link'
+import { ThemeToggle } from './theme/theme-toggle'
+import { Separator } from './ui/separator'
 
 export function Header() {
   return (
@@ -16,15 +15,19 @@ export function Header() {
         <Separator orientation="vertical" className="h-6" />
 
         <nav className="flex items-center space-x-4 lg:space-x-6">
-          <NavLink to={ELINKS_TO_NAVIGATE.HOME}>
+          <NavLink to={EROUTES_PATHS.HOME}>
             <Home className="h-4 w-4" />
             Inicio
           </NavLink>
-          <NavLink to={ELINKS_TO_NAVIGATE.ORDERS}>
+          <NavLink to={EROUTES_PATHS.ORDERS}>
             <UtensilsCrossed className="h-4 w-4" />
             Pedidos
           </NavLink>
         </nav>
+        <div className="ml-auto flex items-center gap-2">
+          <ThemeToggle />
+          <AccountMenu />
+        </div>
       </div>
     </div>
   )

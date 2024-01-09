@@ -2,18 +2,32 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { AppLayout } from './pages/_layouts/app'
 import { AuthLayout } from './pages/_layouts/auth'
-import { Dashboard } from './pages/app/dashboard'
+import { NotFound } from './pages/404/404'
+import { Dashboard } from './pages/app/dashboard/dashboard'
+import { Orders } from './pages/app/orders/orders'
 import { SignIn } from './pages/auth/sign-in'
 import { SignUp } from './pages/auth/sign-up'
+
+export enum EROUTES_PATHS {
+  HOME = '/',
+  ORDERS = '/orders',
+  SIGN_IN = '/sign-in',
+  SIGN_UP = '/sign-up',
+}
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
+    errorElement: <NotFound />,
     children: [
       {
-        path: '/',
+        path: `${EROUTES_PATHS.HOME}`,
         element: <Dashboard />,
+      },
+      {
+        path: `${EROUTES_PATHS.ORDERS}`,
+        element: <Orders />,
       },
     ],
   },
@@ -22,11 +36,11 @@ export const router = createBrowserRouter([
     element: <AuthLayout />,
     children: [
       {
-        path: '/sign-in',
+        path: `${EROUTES_PATHS.SIGN_IN}`,
         element: <SignIn />,
       },
       {
-        path: '/sign-up',
+        path: `${EROUTES_PATHS.SIGN_UP}`,
         element: <SignUp />,
       },
     ],
