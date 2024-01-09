@@ -54,6 +54,9 @@ export function RevenueChart() {
               }
             />
             <XAxis dataKey="date" tickLine={false} axisLine={false} dy={17} />
+
+            <CartesianGrid vertical={false} className="stroke-muted" />
+
             <Line
               type="linear"
               strokeWidth={2}
