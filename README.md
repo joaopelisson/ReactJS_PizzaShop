@@ -20,5 +20,5 @@ It allows the shopkeeper to track restaurant metrics, such as monthly and daily 
 
  - _The project uses pure React, and the API integration is done using React Query. 🚀_
 
- - _The API is ready and developed with BAN. 🔐_
+ - _The API is ready and developed with BAN. ([The API we're going to use is from this repository here!](https://github.com/rocketseat-education/pizzashop-api)) 🔐_
 
